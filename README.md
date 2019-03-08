@@ -1,4 +1,4 @@
-# Wikidata Card Game Generator - Swedish churches
+# Wikidata Card Game Generator - Tores Toolbox
 
 Generate your own card game, suitable for playing [Top Trumps](https://en.wikipedia.org/wiki/Top_Trumps), using [Wikidata](https://www.wikidata.org)!
 
