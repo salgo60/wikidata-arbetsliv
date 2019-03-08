@@ -1,5 +1,5 @@
 const MAX_PROPERTIES = 5;
-const MAX_CARDS = 32;
+const MAX_CARDS = 128;
 const API_URL = `https://query.wikidata.org/bigdata/namespace/wdq/sparql?format=json&query=`;
 
 let statusField = undefined;
@@ -126,7 +126,7 @@ function buildDeck(results) {
             } else {
                 value = line.valueLabel.value;
                 if (line.unitLabel && line.unitLabel.value != "1") {
-                    value += " "+unitSimplify(line.unitLabel.value); 
+                    value += " "+unitSimplify(line.unitLabel.value);
                 }
             }
             if (line.item.value in items) {
@@ -179,39 +179,29 @@ function runDataQuery(restriction) {
         ?item wikibase:statements ?statements.
       }
       ORDER BY DESC(?statements)
-      LIMIT 100
+      LIMIT 200
     } AS %items
     WHERE {
       INCLUDE %items.
-
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en,de". }
-
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "sv,en,de". }
       OPTIONAL { ?item wdt:P18 ?image. }
-
       ?item ?p ?statement.
       ?statement a wikibase:BestRank.
-
       ?property rdfs:label ?propLabel.
       ?property wikibase:claim ?p.
       ?property rdf:type wikibase:Property .
-
-      FILTER (lang(?propLabel) = 'en' ).
-
+      FILTER (lang(?propLabel) = 'sv' ).
       {
         ?property wikibase:propertyType wikibase:Quantity.
-
         ?statement ?psn ?valueNode.
         ?valueNode wikibase:quantityAmount ?value.
         ?valueNode wikibase:quantityUnit ?unit.
-
         ?property wikibase:statementValue ?psn.
       } UNION {
         ?property wikibase:propertyType wikibase:Time.
-
         ?statement ?psn ?valueNode.
         ?valueNode wikibase:timeValue ?value.
         ?valueNode wikibase:timePrecision ?precision.
-
         ?property wikibase:statementValue ?psn.
       }
     }
@@ -243,7 +233,7 @@ function genCardHTML(data){
     cardsDiv.appendChild(link);
 
     var card = document.createElement('div');
-    card.className = 'card'; 
+    card.className = 'card';
 
     link.appendChild(card);
 
@@ -290,13 +280,13 @@ function genCardHTML(data){
 }
 
 window.onload = function() {
-    var type = window.location.search.substr(1) || "Q11344";
+    var type = window.location.search.substr(1) || "Q10416961";
     statusField = document.getElementById("status");
 
     const typeNameQuery = `
     SELECT ?label WHERE {
       wd:${type} rdfs:label ?label.
-      FILTER((LANG(?label)) = "en")
+      FILTER((LANG(?label)) = "sv")
     }
     `;
     runQuery(typeNameQuery, results => {
