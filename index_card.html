@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tores toolbox 2 - Wikidata Card </title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <script src="cardgame2.js"></script>
+</head>
+<body>
+<h1>Tores toolbox 2 - Arbetslivsmuseer<br/>att jobba med idag</h1>
+<p id="subtitle">Based on <a href="https://cardgame.morr.cc/">Wikidata Card Game Generator</a></p>
+<p><b>New</b> Arbetskort</p>
+
+<h2>Arbetslivsmuseer - <a href="https://developers.google.com/web/tools/lighthouse/">Google Lighthouse</a></h2>
+<br /><br />
+
+<p>Hur det <b>kommer att fungerar</b> när Tore levererat? Från Wikidata hämtas Arbetslivsmuseer med egenskaper, och kort visas</p>
+<p>Genom att klicka på ett kort så kommer:</p>
+<p>
+    <ll>
+        <li>Google Lighthuse att köras<br/>&nbsp;
+        <li>En analys av prestanda görs<br/>&nbsp;
+            <ll>
+        <li><a hef="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/">Critical
+            Rendering Path (CRP)</a><br/>&nbsp;
+        </li>
+        <li>Uppskatta <a href="https://developers.google.com/web/fundamentals/performance/rail">Input Latency</a> dvs.
+            allt över 100ms anses segt<br/>&nbsp;
+        </li>
+        <li>Speed index skapas och kan jämföras med alla andra arbetslivsmuseer<a href="https://github.com/paulirish/speedline">se speedline</a><br/>&nbsp;</li>
+        <li>Andra kritiska saker kontrolleras som Wikipedia sida/ Google registrerad / Wikidata pos</li>
+    </ll>
+    </li></ll></p>
+<p id="status"></p>
+
+<div id="cards">
+</div>
+</body>
+</html>

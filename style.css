@@ -13,7 +13,7 @@ body {
     overflow-y: scroll;
 }
 
-h1, p {
+h1, p, li, h2 {
     max-width: 60rem;
     margin: auto;
 }
