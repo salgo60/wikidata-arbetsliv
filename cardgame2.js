@@ -13,7 +13,7 @@ function runQuery(query, callback) {
     window.fetch(API_URL+query).then(
         function (response) {
             if (response.status !== 200) {
-                setStatus(`The query took too long or failed. This is probably a bug, let us know! (Status code: ${response.status})`);
+                setStatus(`Frågan tog för lång tid eller var fel. Troligen en bug! Rapportera den (Status kod: ${response.status})`);
                 return;
             }
             response.json().then(function (data) {
