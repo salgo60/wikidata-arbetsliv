@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DIGFG working cards - Wikidata Card </title>
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <script src="cardgame2.js"></script>
+</head>
+<body>
+<img src="https://resources.mynewsdesk.com/image/upload/c_limit,dpr_2.625,f_auto,h_700,q_auto,w_360/ll2uaqr3pebu5lhdz3qd.jpg">
+<a href="https://github.com/salgo60/wikidata-arbetsliv"><img alt="Fork me on GitHub"
+                                                             src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
+                                                             style="position: absolute; top: 0; right: 0; border: 0;"></a>
+<h1>Sveriges är snart bäst i världen. DIGG driver på</h1>
+<p id="subtitle">Code based on <a href="https://cardgame.morr.cc/">Wikidata Card Game Generator</a> available at <a href="https://github.com/salgo60/wikidata-arbetsliv">GITHUB</a></p>
+<h2>Draft av hur en <a href="http://www.digg.se/">DIGG</a> Dashboard skulle kunna se ut som bättre kommunicera status på Öppen Data</h2>
+
+
+<p>Tanken är att DIGG om några veckor har gjort Sverige bäst i världen på öppen data. Ryktet säger att Sveriges kommuner redan kanske denna vecka 
+når målet.
+<br/><br/>
+
+<p>Genom att klicka på ett kort så skulle man kunna:</p>
+<p>
+<ul id="todo">
+    <li>starta <a href="https://developers.google.com/web/tools/lighthouse/">Google Lighthouse</a>  - exempel <a
+            href="https://googlechrome.github.io/lighthouse/viewer/?gist=a94e7416d981f45902c87a5a1d48c1d0"
+            target="_blank"> test på denna sida</a>
+        <ul>
+            <li>En analys av prestanda görs:<br/>
+
+                <ul>
+                    <li><a hef="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/">Critical
+                        Rendering Path (CRP)</a>
+                    </li>
+                    <li>Uppskatta <a href="https://developers.google.com/web/fundamentals/performance/rail">Input
+                        Latency</a>
+                        dvs.
+                        allt över 100ms anses segt
+                    </li>
+                    <li>Speed index skapas och kan jämföras med alla andra arbetslivsmuseer<a
+                            href="https://github.com/paulirish/speedline">se speedline</a>
+                    </li>
+                </ul>
+            </li>
+            <li>Andra kritiska saker kontrolleras som Wikipedia sida/ Google registrerad / Wikidata postens kvalitet</li>
+            <li>Stöd för <b><a href="https://www.youtube.com/watch?v=8p6Hxm-cty0">FAIRDATA link</a></b></li>
+            <li>Skapa olika DIGG index <ul><li>grad av kopplad till länkade data</li>
+                <li>material öppet tillgängligt cc-0</li>
+                <li>materialet finns hos andra aktörer </li>
+            </ul>
+        </ul>
+    </li>
+</ul>
+</p>
+<p>Version 2 kommer detta att köras autmatiskt och det kommer att finnas en <a
+        href="https://grafana.wikimedia.org/d/000000489/wikidata-query-service?orgId=1" target="_blank">grafana
+    dashboard</a> som monitorerar alla museer/xxxx i realtid</p>
+<p>Version 2.1 varje kommun kommer att ha en <a href="https://upphandling24.se/hur-anvander-jag-sla-och-vad-ar-det/"
+                                                target="_blank">SLA</a>, API:er och en <a href="http://wikiba.se/">Wikibase</a>
+    med SPARQL så att samlingarna kan integreras med varandra och vara länkade med <a href="https://www.youtube.com/watch?v=Bdwg168elaE">Wikibase/Wikidata</a> och stödjer FAIRDATA</p>
+<p id="status"></p>
+
+<div id="cards">
+</div>
+</body>
+</html>
