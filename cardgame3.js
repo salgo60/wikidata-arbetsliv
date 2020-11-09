@@ -205,7 +205,7 @@ function runDataQuery(restriction) {
         ?property wikibase:statementValue ?psn.
       }
     }
-    z`;
+    `;
 
     query = query.replace(/%/g, "%25");
 
