@@ -176,8 +176,6 @@ function runDataQuery(restriction) {
     SELECT ?item ?itemLabel ?itemDescription ?image ?property ?propLabel ?valueLabel ?unitLabel ?precision WITH {
       SELECT DISTINCT ?item WHERE {
         ${restriction}
-		minus {?item  wd:P576 ?end}
-  		minus {?item  wd:P1366 ?sub}
         ?item wikibase:statements ?statements.
       }
       ORDER BY DESC(?statements)
