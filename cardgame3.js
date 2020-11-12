@@ -216,7 +216,7 @@ function runDataQuery(restriction) {
             genCardHTML(card);
         }
 
-        statusField.innerHTML = query + " DIGG jobbkort genereras vad status är just nu för <strong>"+typeLabel+"</strong>  "+deck.length+" cards. <a href=\"javascript:window.print()\" class=\"button\"><br /><br />Kontakta dom and make them SHINE?</a>";
+        statusField.innerHTML = " DIGG jobbkort genereras vad status är just nu för <strong>"+typeLabel+"</strong>  "+deck.length+" cards. <a href=\"javascript:window.print()\" class=\"button\"><br /><br />DIGG jobbar med dom and makes them SHINE?</a>";
     });
 }
 
