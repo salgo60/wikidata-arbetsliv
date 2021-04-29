@@ -1,5 +1,5 @@
 const MAX_PROPERTIES = 5;
-const MAX_CARDS = 290;
+const MAX_CARDS = 500;
 const API_URL = `https://query.wikidata.org/bigdata/namespace/wdq/sparql?format=json&query=`;
 
 let statusField = undefined;
