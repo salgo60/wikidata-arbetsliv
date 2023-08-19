@@ -267,7 +267,7 @@ function genCardHTML(data){
 }
 
 window.onload = function() {
-    var type = window.location.search.substr(1) || "Q127448";
+    var type = window.location.search.substr(1) || "Q119621476";
     statusField = document.getElementById("status");
 
     const typeNameQuery = `
