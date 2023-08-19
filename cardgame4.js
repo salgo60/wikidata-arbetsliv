@@ -191,19 +191,7 @@ function runDataQuery(restriction) {
       ?property wikibase:claim ?p.
       ?property rdf:type wikibase:Property .
       FILTER (lang(?propLabel) = 'sv' ).
-      {
-        ?property wikibase:propertyType wikibase:Quantity.
-        ?statement ?psn ?valueNode.
-        ?valueNode wikibase:quantityAmount ?value.
-        ?valueNode wikibase:quantityUnit ?unit.
-        ?property wikibase:statementValue ?psn.
-      } UNION {
-        ?property wikibase:propertyType wikibase:Time.
-        ?statement ?psn ?valueNode.
-        ?valueNode wikibase:timeValue ?value.
-        ?valueNode wikibase:timePrecision ?precision.
-        ?property wikibase:statementValue ?psn.
-      }
+
     }
     `;
 
