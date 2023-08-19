@@ -121,14 +121,7 @@ function buildDeck(results) {
         if (valid) {
             let value = ""
 
-            if (line.precision) {
-                value = formatDate(line.valueLabel.value, line.precision.value);
-            } else {
-                value = line.valueLabel.value;
-                if (line.unitLabel && line.unitLabel.value != "1") {
-                    value += " "+unitSimplify(line.unitLabel.value);
-                }
-            }
+
             if (line.item.value in items) {
             } else {
                 items[line.item.value] = {item: line.item.value, label: line.itemLabel.value, properties: {}};
@@ -179,12 +172,12 @@ function runDataQuery(restriction) {
         ?item wikibase:statements ?statements.
       }
       ORDER BY DESC(?statements)
-      LIMIT 2000
+      LIMIT 100
     } AS %items
     WHERE {
       INCLUDE %items.
       SERVICE wikibase:label { bd:serviceParam wikibase:language "sv,en,de". }
-      OPTIONAL { ?item wdt:P18 ?image. }
+      OPTIONAL {?item wdt:P18 ?image}
       ?item ?p ?statement.
       ?statement a wikibase:BestRank.
       ?property rdfs:label ?propLabel.
